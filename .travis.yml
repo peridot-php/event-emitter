@@ -8,8 +8,7 @@ matrix:
     allow_failures:
         - php: hhvm
 
-before_script:
-  - wget http://getcomposer.org/composer.phar
-  - php composer.phar install
+install:
+  - composer install --prefer-source
 
-script: phpunit --coverage-text
+script: vendor/bin/peridot
