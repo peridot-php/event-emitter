@@ -1,45 +1,34 @@
-# Événement
+# EventEmitter
 
-Événement is a very simple event dispatching library for PHP.
-
-It has the same design goals as [Silex](http://silex-project.org) and
-[Pimple](http://pimple-project.org), to empower the user while staying concise
-and simple.
+EventEmitter is a very simple event dispatching library for PHP. It is a fork of
+[Événement](https://github.com/igorw/evenement) aiming to provide additional functionality
+and PHP 5.6 features like variadic arguments.
 
 It is very strongly inspired by the EventEmitter API found in
 [node.js](http://nodejs.org).
 
-[![Build Status](https://secure.travis-ci.org/igorw/evenement.png?branch=master)](http://travis-ci.org/igorw/evenement)
+[![Build Status](https://secure.travis-ci.org/peridot-php/event-emitter.png?branch=master)](http://travis-ci.org/peridot-php/event-emitter)
 
 ## Fetch
 
-The recommended way to install Événement is [through composer](http://getcomposer.org).
+The recommended way to install EventEmitter is [through composer](http://getcomposer.org).
 
 Just create a composer.json file for your project:
 
 ```JSON
 {
     "require": {
-        "evenement/evenement": "2.0.*"
-    }
-}
-```
-
-**Note:** The `2.0.*` version of Événement requires PHP 5.4. If you are
-using PHP 5.3, please use the `1.0.*` version:
-
-```JSON
-{
-    "require": {
-        "evenement/evenement": "1.0.*"
+        "peridot/event-emitter": "2.0.*"
     }
 }
 ```
 
 And run these two commands to install it:
 
-    $ curl -s http://getcomposer.org/installer | php
-    $ php composer.phar install
+```
+$ curl -s http://getcomposer.org/installer | php
+$ php composer.phar install
+```
 
 Now you can add the autoloader, and you will have access to the library:
 
@@ -54,7 +43,7 @@ require 'vendor/autoload.php';
 
 ```php
 <?php
-$emitter = new Evenement\EventEmitter();
+$emitter = new Peridot\EventEmitter();
 ```
 
 ### Adding Listeners
@@ -70,13 +59,13 @@ $emitter->on('user.created', function (User $user) use ($logger) {
 
 ```php
 <?php
-$emitter->emit('user.created', array($user));
+$emitter->emit('user.created', $user);
 ```
 
 Tests
 -----
 
-    $ phpunit
+    $ vendor/bin/phpunit
 
 License
 -------

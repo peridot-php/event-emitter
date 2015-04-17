@@ -12,8 +12,8 @@
          bootstrap="tests/bootstrap.php"
 >
     <testsuites>
-        <testsuite name="Evenement Test Suite">
-            <directory>./tests/Evenement/</directory>
+        <testsuite name="EventEmitter Test Suite">
+            <directory>./tests/Peridot/</directory>
         </testsuite>
     </testsuites>
 

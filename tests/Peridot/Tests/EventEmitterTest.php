@@ -1,17 +1,7 @@
 <?php
+namespace Peridot\Tests;
 
-/*
- * This file is part of Evenement.
- *
- * (c) Igor Wiedler <igor@wiedler.ch>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Evenement\Tests;
-
-use Evenement\EventEmitter;
+use Peridot\EventEmitter;
 
 class EventEmitterTest extends \PHPUnit_Framework_TestCase
 {
@@ -35,7 +25,7 @@ class EventEmitterTest extends \PHPUnit_Framework_TestCase
 
     public function testAddListenerWithStaticMethod()
     {
-        $this->emitter->on('bar', ['Evenement\Tests\Listener', 'onBar']);
+        $this->emitter->on('bar', ['Peridot\Tests\Listener', 'onBar']);
     }
 
     public function testAddListenerWithInvalidListener()
