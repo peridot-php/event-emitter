@@ -52,7 +52,7 @@ trait EventEmitterTrait
     public function emit($event, ...$arguments)
     {
         foreach ($this->listeners($event) as $listener) {
-            $listener(...$arguments);
+            call_user_func_array($listener, $arguments);
         }
     }
 }
